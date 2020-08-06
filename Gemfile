@@ -24,7 +24,8 @@ gem 'money-rails'
 gem 'bootstrap', '~> 4.5.0'
 gem 'figaro'
 gem 'stripe-rails'
-gem 'shrine', '~> 3.0'
+## NOTE: Use new version of Shrine for error: https://stackoverflow.com/questions/63237527/shrine-derivatives-plugin-method-image-derivatives-error-undefined-method-byt
+gem 'shrine', github: 'shrinerb/shrine'
 gem 'image_processing', '~> 1.8'
 gem "aws-sdk-s3", "~> 1.14"
 

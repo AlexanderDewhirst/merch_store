@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/shrinerb/shrine.git
+  revision: c039a250845c4df7cac7d9e6f5ca81f985c744eb
+  specs:
+    shrine (3.2.1)
+      content_disposition (~> 1.0)
+      down (~> 5.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -257,9 +265,6 @@ GEM
       rubyzip (>= 1.2.2)
     shoulda-matchers (4.3.0)
       activesupport (>= 4.2.0)
-    shrine (3.2.1)
-      content_disposition (~> 1.0)
-      down (~> 5.1)
     slop (3.6.0)
     spring (2.1.0)
     spring-watcher-listen (2.0.1)
@@ -334,7 +339,7 @@ DEPENDENCIES
   sass-rails (>= 6)
   selenium-webdriver
   shoulda-matchers
-  shrine (~> 3.0)
+  shrine!
   spring
   spring-watcher-listen (~> 2.0.0)
   stripe-rails

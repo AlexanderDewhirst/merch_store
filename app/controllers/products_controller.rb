@@ -31,7 +31,8 @@ class ProductsController < ApplicationController
     @product = Product.new(product_params)
     respond_to do |format|
       if @product.save
-        # @product.photo.image_derivatives!
+        @product.photo.image_derivatives!
+        @product.photo.save
         format.html { redirect_to purchases_products_path, notice: 'Product was successfully created.' }
       else
         @photo = @product.build_photo
