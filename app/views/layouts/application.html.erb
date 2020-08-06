@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Payments App</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://js.stripe.com/v3/"></script>
+  </head>
+
+  <body>
+    <% flash.each do |type, msg| %>
+      <%= render partial: 'shared/flash_message', locals: { alert_type: type, msg: msg } %>
+    <% end %>
+    <%= render partial: "shared/navigation" %>
+    <div class='wrapper'>
+      <%= yield %>
+    </div>
+  </body>
+</html>

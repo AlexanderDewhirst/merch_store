@@ -1,0 +1,66 @@
+// Place all the styles related to the Products controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.image_container {
+  position: relative;
+}
+
+.primary_image_text {
+  position: absolute;
+  text-align: center;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.secondary_image_text {
+  position: absolute;
+  text-align: center;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+.card_container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.card_container > * {
+  flex: 0 0 24.5%;
+  // height: 300px;
+  position: relative;
+  transition: transform .2s;
+}
+
+.card {
+  margin: 1px 1px;
+}
+
+.card .product_image {
+  opacity: 1;
+  width: 100%;
+  transition: .5s ease;
+  backface-visibility: hidden;
+  background-position: top;
+}
+
+.centered {
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transition: .5s ease;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+.card:hover .product_image {
+  opacity: .3;
+}
+
+.card:hover .centered {
+  opacity: 1;
+}

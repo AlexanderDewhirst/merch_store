@@ -1,0 +1,24 @@
+<div class='container'>
+  <%= render partial: 'orders/table', locals: { orders: @orders, order_type: order_type } %>
+</div>
+<div class='container'>
+  <% if order_type == :cart %>
+    <% if current_user.customer? %>
+      <%= form_for :order, url: checkout_purchases_orders_path(), method: :put, id: 'payment-form' do |f| %>
+        <%= f.hidden_field 'payment_gateway', value: 'stripe' %>
+        <div class='form-group'>
+          <label for='card-element'>
+              Credit/Debit Card
+          </label>
+          <div id='card-element'></div>
+        </div>
+        <div id='card-errors' role='alert'></div>
+        <div class='d-flex justify-content-end'>
+            <%= f.submit "Checkout", class: 'btn btn-success p-2' %>
+        </div>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>
+
+<%= javascript_pack_tag "setup_stripe" %>

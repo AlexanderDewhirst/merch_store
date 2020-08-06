@@ -1,0 +1,2 @@
+module Subscriptions::ProductsHelper
+end

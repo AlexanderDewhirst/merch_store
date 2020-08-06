@@ -1,0 +1,8 @@
+$('#product_modal_popup').html("<%= j render partial: 'products/product_modal', locals: { product: @product } %>");
+$('#product_info').html('<%= j render partial: 'products/product_info', locals: { product: @product } %>');
+$('#product_form').html('<%= j render partial: 'products/product_form', locals: { product: @product } %>');
+
+
+$('#product_modal').modal('show');
+
+<%# $("#card-element").html("<%= j render partial: 'products/setup_stripe' %>

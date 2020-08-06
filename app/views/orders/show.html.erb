@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Product:</strong>
+  <%= @order.product_id %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @order.user_id %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @order.status %>
+</p>
+
+<p>
+  <strong>Token:</strong>
+  <%= @order.token %>
+</p>
+
+<p>
+  <strong>Charge:</strong>
+  <%= @order.charge_id %>
+</p>
+
+<p>
+  <strong>Error message:</strong>
+  <%= @order.error_message %>
+</p>
+
+<p>
+  <strong>Customer:</strong>
+  <%= @order.customer_id %>
+</p>
+
+<p>
+  <strong>Payment gateway:</strong>
+  <%= @order.payment_gateway %>
+</p>
+
+<%= link_to 'Edit', edit_order_path(@order) %> |
+<%= link_to 'Back', orders_path %>

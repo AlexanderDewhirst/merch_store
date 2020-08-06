@@ -1,0 +1,32 @@
+<%= form_for product, multipart: true do |f| %>
+  <% if f.object.errors.any? %>
+    <%= render partial: 'shared/flash_message', locals: { alert_type: 'danger', msg: f.object.errors.full_messages.to_sentence } %>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name, value: f.object.name&.humanize || nil, required: true, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :price %>
+    <%= f.text_field :price, value: f.object.price || nil, required: true, class: 'form-control' %>
+  </div>
+
+  <%= f.fields_for :photo do |photo| %>
+    <div class='form-group'>
+      <%= photo.hidden_field :image, value: photo.object.cached_image_data %>
+      <div class='input-group'>
+        <div class='custom-file'>
+          <%= photo.file_field :image, class: 'custom-file-input' %>
+          <label class='custom-file-label' for='inputGroupFile04'>Choose File</label>
+        </div>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="actions d-flex align-items-baseline justify-content-between">
+    <%= link_to "Back", purchases_products_path(), class: "btn btn-secondary p-2" %>
+    <%= f.submit "Submit", class: "btn btn-primary p-2" %>
+  </div>
+<% end %>

@@ -1,0 +1,2 @@
+module Subscriptions::OrdersHelper
+end
