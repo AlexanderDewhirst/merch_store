@@ -1,6 +1,6 @@
 <div class='d-flex justify-content-center'>
     <% if product.photo %>
-        <%= image_tag product.photo.image_url, class: 'card-img-top' %>
+        <%= image_tag product.photo.image_url(:medium), class: 'card-img-top' %>
     <% else %>
         <%= image_pack_tag 'default_image.jpg', class: 'card-img-top' %>
     <% end %>

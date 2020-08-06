@@ -20,7 +20,7 @@
       <% @products.each do |product| %>
         <div class='card p-2'>
           <% if product.photo&.image_url %>
-            <%= image_tag product.photo&.image_url(:medium), class: 'product_image card-img-top' %>
+            <%= image_tag product.photo&.image_url, class: 'product_image card-img-top' %>
           <% else %>
             <%= image_pack_tag "default_image.jpg", class: 'product_image card-img-top' %>
           <% end %>
